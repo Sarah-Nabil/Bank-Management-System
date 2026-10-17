@@ -1,194 +1,156 @@
+# 🏦 Bank Management System
 
+## 📖 Project Overview
 
-\# Bank Management System
+Bank Management System is a desktop application developed using C# and .NET Framework 4.7 with Windows Forms.
 
+The system simulates essential banking operations, including client management, user administration, deposits, withdrawals, money transfers, currency exchange, and login activity tracking.
 
+It follows a **3-Tier Architecture** to separate the Presentation Layer, Business Logic Layer, and Data Access Layer, making the application easier to organize and maintain.
 
-A desktop banking application developed using C#, Windows Forms, .NET Framework 4.7, ADO.NET, and Microsoft SQL Server.
+---
 
+## ⚙️ Features
 
+### 👥 Clients Management
 
-This project demonstrates banking operations, user management, authentication, transaction processing, currency exchange, and permission-based access control using a layered architecture.
+- Add, view, update, and delete client records
+- Manage client account information
+- View and manage client balances
 
+### 👤 Users Management
 
+- Add, view, update, and delete system users
+- Assign roles and permissions to users
+- Manage user account status
+- Control access to application modules and operations
 
-\## Features
+### 💳 Banking Transactions
 
+- Deposit money into client accounts
+- Withdraw money from client accounts
+- Transfer money between accounts
+- View transfer logs and transaction records
+- Display individual and total account balances
 
+### 💱 Currency Management & Exchange
 
-\### 1. Client Management
+- View and search available currencies
+- Display currency codes, names, and exchange rates
+- Convert amounts between selected currencies
+- Calculate conversions using rates stored in the database
 
-\- Add, view, update, and delete client records.
+### 🔐 Authentication & Login Records
 
-\- Manage client account information.
+- User login and logout
+- Track login and logout activity
+- Record activity timestamps, where configured
+- Secure password storage using PBKDF2 hashing
 
-\- Track client balances.
+### 🛡️ Authorization & Permissions
 
+- Role-based access control
+- Module-level permissions for clients, users, transactions, currency exchange, and login records
+- Action-level permissions for Add, Update, and Delete operations
+- Restrict access according to assigned permissions and user roles
 
+---
 
-\### 2. User Management
+## 🏗️ Architecture
 
-\- Add, view, update, and delete users.
+The project follows a **3-Tier Architecture**:
 
-\- Assign roles and permissions to users.
+- **Presentation Layer:** Windows Forms interface and user interactions
+- **Business Logic Layer:** Business rules, validations, and application operations
+- **Data Access Layer:** Database communication using ADO.NET and stored procedures
 
-\- Manage user account status.
+A separate utilities project contains shared helper classes and supporting functionality.
 
-\- Control access to application modules and operations.
+---
 
+## 🛠️ Technologies Used
 
+- **Language:** C#
+- **Framework:** .NET Framework 4.7
+- **Desktop UI:** Windows Forms (WinForms)
+- **Database:** Microsoft SQL Server
+- **Data Access:** ADO.NET
+- **Database Logic:** SQL Stored Procedures
+- **Architecture:** 3-Tier Architecture
+- **Security:** PBKDF2 Password Hashing and Role-Based Access Control
+- **IDE:** Visual Studio
 
-\### 3. Banking Transactions
+---
 
-\- Deposit money into client accounts.
+## 🗄️ Database Setup
 
-\- Withdraw money from client accounts.
-
-\- Transfer money between accounts.
-
-\- View transfer logs and transaction records.
-
-\- Track account balances and total balances.
-
-
-
-\### 4. Currency Management
-
-\- View available currencies and exchange rates.
-
-\- Search currencies by country name.
-
-\- Display currency codes and names.
-
-\- Convert amounts between currencies using stored exchange rates.
-
-
-
-\### 5. Authentication and Login Records
-
-\- User login and logout.
-
-\- Track login and logout records.
-
-\- Record activity timestamps where configured.
-
-\- Store passwords using PBKDF2 password hashing.
-
-
-
-\### 6. Authorization and Permissions
-
-\- Role-based access control.
-
-\- Module-level permissions for clients, users, transactions, currency exchange, and login records.
-
-\- Action-level permissions for Add, Update, and Delete operations.
-
-\- Restrict application features according to assigned permissions.
-
-
-
-\## Technologies Used
-
-
-
-\- \*\*Programming Language:\*\* C#
-
-\- \*\*Framework:\*\* .NET Framework 4.7
-
-\- \*\*User Interface:\*\* Windows Forms (WinForms)
-
-\- \*\*Database:\*\* Microsoft SQL Server
-
-\- \*\*Data Access:\*\* ADO.NET
-
-\- \*\*Database Operations:\*\* SQL Stored Procedures
-
-\- \*\*Architecture:\*\* Three-Tier Architecture
-
-\- \*\*Development Environment:\*\* Visual Studio
-
-
-
-\## Project Structure
-
-
-
-The solution is organized into the following projects:
-
-
-
-\- \*\*Bank:\*\* Presentation Layer — Windows Forms and user interface.
-
-\- \*\*BankBusinessLayer:\*\* Business Logic Layer — application rules and operations.
-
-\- \*\*BankDataLayer:\*\* Data Access Layer — database queries and stored procedure execution.
-
-\- \*\*Bank\_Utilities:\*\* Shared utilities and helper classes.
-
-\- \*\*DataBase:\*\* SQL Server database backup.
-
-
-
-\## Database
-
-
-
-The repository includes a SQL Server database backup located at:
-
-
+The repository includes a SQL Server database backup file:
 
 `DataBase/BANKDB.bak`
 
+### Using the Backup File (.bak)
 
+1. Install Microsoft SQL Server and SQL Server Management Studio (SSMS).
+2. Open SSMS and connect to your SQL Server instance.
+3. Right-click **Databases** and select **Restore Database**.
+4. Select **Device**, then browse to `DataBase/BANKDB.bak`.
+5. Restore the database and verify its name.
+6. Configure the application's connection string to match your local SQL Server instance.
 
-To set up the database:
+---
 
+## 📦 Project Structure
 
+```text
+Bank-Management-System/
+│
+├── Bank/
+│   ├── Bank.sln
+│   ├── Forms
+│   ├── Properties
+│   └── Resources
+│
+├── BankBusinessLayer/
+│   └── Business Logic Classes
+│
+├── BankDataLayer/
+│   └── Data Access Classes
+│
+├── Bank_Utilities/
+│   └── Shared Utilities and Helpers
+│
+├── DataBase/
+│   └── BANKDB.bak
+│
+├── .gitignore
+└── README.md
+```
 
-1\. Install Microsoft SQL Server and SQL Server Management Studio (SSMS).
+---
 
-2\. Restore `BANKDB.bak` using SSMS.
+## 🚀 Getting Started
 
-3\. Verify the database name and SQL Server instance.
+1. Clone or download this repository.
+2. Restore the database using the provided backup file.
+3. Update the database connection settings for your local environment.
+4. Open `Bank/Bank.sln` in Visual Studio.
+5. Restore or configure any required project dependencies.
+6. Build the solution and run the application.
 
-4\. Configure the application's connection string for your local SQL Server.
+---
 
-5\. Open `Bank/Bank.sln` in Visual Studio.
+## 🎯 Project Goals
 
-6\. Build the solution and run the application.
+This project demonstrates practical experience with:
 
+- Desktop application development using C# and WinForms
+- Working with SQL Server through ADO.NET
+- Implementing stored procedures for database operations
+- Applying a 3-Tier Architecture
+- Managing banking transactions and account balances
+- Building authentication and permission-based authorization
+- Organizing a multi-project Visual Studio solution
 
+---
 
-\## Architecture
-
-
-
-The project separates the presentation, business logic, and data access responsibilities.
-
-
-
-\- The Presentation Layer handles forms and user interactions.
-
-\- The Business Logic Layer handles business rules and application operations.
-
-\- The Data Access Layer communicates with SQL Server using ADO.NET and stored procedures.
-
-
-
-This separation improves code organization and maintainability.
-
-
-
-\## Project Purpose
-
-
-
-This is an educational project created to practice C# desktop development, database integration, layered architecture, banking workflows, authentication, and authorization.
-
-
-
-\*\*Note:\*\* This project is for learning and demonstration purposes only. It is not intended for real banking or financial operations.
-
-
-
+**Note:** This project is developed for educational and demonstration purposes. It is not intended for real banking or financial operations.
