@@ -8,6 +8,8 @@ The system simulates essential banking operations, including client management, 
 
 It follows a **3-Tier Architecture** to separate the Presentation Layer, Business Logic Layer, and Data Access Layer, making the application easier to organize and maintain.
 
+🎥 **Video Demo:** [Watch the Demo Video](https://drive.google.com/file/d/12xCVfGkIKocDBI-9L7oa98BnW49obzQm/view?usp=sharing)
+
 ---
 
 ## ⚙️ Features
